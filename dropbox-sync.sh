@@ -2,6 +2,12 @@
 DROPBOX_OSU_DIR=$HOME/Dropbox/Apps/osu\!
 OSU_DIR=$HOME/osu-folder
 
+if [ ! -d $HOME/Dropbox ]; then
+    echo "There does not seem to be a Dropbox directory at ~/Dropbox. \
+Are you sure you have it installed?"
+    exit 1
+fi
+
 echo "Using Dropbox folder $DROPBOX_OSU_DIR and Osu! folder $OSU_DIR."
 
 if [ ! -L $OSU_DIR/Skins ]; then
