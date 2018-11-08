@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # -- Install patched wine --
-if grep -q "\[thepoon\]" /etc/pacman.conf; then
+if grep -q "^\[thepoon\]$" /etc/pacman.conf; then
     echo "The Poon's repo is already in /etc/pacman.conf; skipping..."
 else
     echo "Adding The Poon's repo to /etc/pacman.conf"
