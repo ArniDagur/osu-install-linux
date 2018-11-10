@@ -1,6 +1,6 @@
 #!/bin/bash
 export WINEPREFIX="$HOME/.osu-patch"
-export STAGING_AUDIO_DURATION=5000 # As low as you can get osu! stable with
+export STAGING_AUDIO_DURATION=3850 # As low as you can get osu! stable with
 
 # Start Osu!
 cd $WINEPREFIX/drive_c/users/$USER/Local\ Settings/Application\ Data/osu\!
