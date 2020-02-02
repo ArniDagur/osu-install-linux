@@ -4,4 +4,4 @@ export STAGING_AUDIO_DURATION=3850 # As low as you can get osu! stable with
 
 # Start Osu!
 cd $WINEPREFIX/drive_c/users/$USER/Local\ Settings/Application\ Data/osu\!
-/opt/wine-osu/bin/wine osu\!.exe "$@"
+wine osu\!.exe "$@"

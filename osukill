@@ -2,4 +2,4 @@
 export WINEPREFIX="$HOME/.osu-patch"
 
 # Kill Osu!
-/opt/wine-osu/bin/wineserver -k
+wineserver -k

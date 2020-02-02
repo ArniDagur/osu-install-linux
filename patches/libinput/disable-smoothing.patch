@@ -1,0 +1,24 @@
+diff --git a/src/evdev-tablet.c b/src/evdev-tablet.c
+index 67880d03..75751ee9 100644
+--- a/src/evdev-tablet.c
++++ b/src/evdev-tablet.c
+@@ -740,7 +740,6 @@ out:
+ 	}
+ 
+ 	tablet_history_push(tablet, &tablet->axes);
+-	tablet_smoothen_axes(tablet, &axes);
+ 
+ 	/* The delta relies on the last *smooth* point, so we do it last */
+ 	axes.delta = tablet_tool_process_delta(tablet, tool, device, &axes, time);
+diff --git a/src/filter-tablet.c b/src/filter-tablet.c
+index 24afb56c..0bc73558 100644
+--- a/src/filter-tablet.c
++++ b/src/filter-tablet.c
+@@ -97,6 +97,7 @@ tablet_accelerator_filter_flat(struct motion_filter *filter,
+ 			       const struct device_float_coords *units,
+ 			       void *data, uint64_t time)
+ {
++    return *(struct normalized_coords *)units;
+ 	struct tablet_accelerator_flat *accel_filter =
+ 		(struct tablet_accelerator_flat *)filter;
+ 	struct libinput_tablet_tool *tool = (struct libinput_tablet_tool*)data;
